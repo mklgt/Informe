@@ -1,0 +1,120 @@
+<body> <br><br>
+    <div class="card w-75 mx-auto" style="background: rgb(10, 15, 15, 0.950);
+    color:rgba(255, 255, 255)">
+
+        <div class="card-header h2">
+            Rellenar informe
+        </div>
+        <div class="card-body text-center">
+            <form novalidate [formGroup]="informeForm">
+                <!--Nombre-->
+                <div class="form-group row mb-2">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre y apellidos</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="nombre" type="text" placeholder="Nombre"
+                            formControlName="nombre" name="nombre" />
+                    </div>
+                </div>
+
+                <!--DNI-->
+                <div class="form-group row mb-2">
+                    <label for="dni" class="col-sm-2 col-form-label">DNI</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="dni" type="text" placeholder="DNI" formControlName="dni"
+                            name="dni" />
+                    </div>
+                </div>
+
+                <!--Dirección-->
+                <div class="form-group row mb-2">
+                    <label for="direccion" class="col-sm-2 col-form-label">Dirección</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="direccion" type="text" placeholder="Dirección"
+                            formControlName="direccion" name="direccion" />
+                    </div>
+                </div>
+
+                <!--Teléfono-->
+                <div class="form-group row mb-2">
+                    <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="telefono" type="text" placeholder="Teléfono"
+                            formControlName="telefono" name="telefono" />
+                    </div>
+                </div>
+
+                <!--Email-->
+                <div class="form-group row mb-2">
+                    <label for="email" class="col-sm-2 col-form-label">Correo electrónico</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="email" type="text" placeholder="Correo" formControlName="email"
+                            name="email" />
+                    </div>
+                </div>
+
+                <!--Licencia-->
+                <div class="form-group row mb-2">
+                    <label for="licencia" class="col-sm-2 col-form-label">Licencia</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="licencia" type="text" placeholder="Licencia"
+                            formControlName="licencia" name="licencia" />
+                    </div>
+                </div>
+
+                <!--Fecha1-->
+                <div class="form-group row mb-2">
+                    <label for="fecha1" class="col-sm-2 col-form-label">Fecha de servicio mínimo:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="fecha1" type="text" placeholder="Fecha" formControlName="fecha1"
+                            name="fecha1" />
+                    </div>
+                </div>
+
+                <!--Fecha 2-->
+                <div class="form-group row mb-2">
+                    <label for="fecha2" class="col-sm-2 col-form-label">Fecha de servicio mínimo</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="fecha2" type="text" placeholder="Fecha" formControlName="fecha2"
+                            name="fecha2" />
+                    </div>
+                </div>
+
+                <!--Fecha 3-->
+                <div class="form-group row mb-2">
+                    <label for="fecha3" class="col-sm-2 col-form-label">Fecha de servicio mínimo</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="fecha3" type="text" placeholder="Fecha" formControlName="fecha3"
+                            name="fecha3" />
+                    </div>
+                </div>
+
+                <!--Incidencia-->
+                <div class="form-group row mb-2">
+                    <label for="incidencia" class="col-sm-2 col-form-label">Incidencia</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="incidencia" type="text" placeholder="Incidencia"
+                            formControlName="incidencia" name="incidencia" />
+                    </div>
+                </div>
+
+                <!--Firma-->
+                <div class="form-group row mb-2">
+                    <label for="firma" class="col-sm-2 col-form-label">Firma</label>
+                    <div class="">
+                        <div class="wrapper mx-auto mb-3">
+                            <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"
+                                class="mx-auto" width=250 height=150></canvas>
+                        </div>
+                        <button class="btn btn-danger" (click)="clearPad()">Borrar firma</button>
+                    </div>
+                </div>
+                <button type="submit" (click)="comprobarDatos()"
+                class="btn btn-warning w-75 mx-auto my-3">Descargar</button>
+            </form>
+            <div class="text-center">
+                <button id="back" class="btn w-75 btn-outline-secondary mr-3 ml-3" [routerLink]="['/']">Atrás</button>
+            </div>
+            <br />
+        </div>
+    </div>
+</body>
